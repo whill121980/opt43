@@ -1,19 +1,33 @@
 This is a small webapp designed to help generate DHCP option 43 strings for various wireless LAN controllers on various DHCP servers. 
 
 The currently supported WLAN controllers are:
+    
     Ruckus:
+    
         SmartZone/VirtualSmartzone
+        
         ZoneDirector
+
     Cisco:
+    
         Various WLAN controllers
+        
     Ubiquity:
+    
         Unifi Controller/Cloud Key(/others?)
 
+
+
 The currently supported DHCP servers are:
+
     Windows Server
+
     Sonicwall firewalls
+    
     Cisco ASA
+    
     Nomadix Hospitality Gateways
+    
     pfSense/opnSense
 
 To use, you simply browse to the page, select the WLAN controller and DHCP server from the dropdowns and enter the list of IP address(es) of your WLAN controller node(s) and the option 43 string wil automatically generate. If you have more than 1 WLAN controller node that you want to include, simply add each IP address separated by a comma (,)
