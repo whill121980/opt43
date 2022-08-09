@@ -3,19 +3,14 @@ This is a small webapp designed to help generate DHCP option 43 strings for vari
 The currently supported WLAN controllers are:
     
     Ruckus:
-    
         SmartZone/VirtualSmartzone
         ZoneDirector
 
     Cisco:
-    
         Various WLAN controllers
         
     Ubiquity:
-    
         Unifi Controller/Cloud Key(/others?)
-
-
 
 The currently supported DHCP servers are:
 
