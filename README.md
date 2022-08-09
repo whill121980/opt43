@@ -5,20 +5,15 @@ The currently supported WLAN controllers are:
     Ruckus:
         SmartZone/VirtualSmartzone
         ZoneDirector
-
     Cisco:
         Aironet
-        
     Ubiquity:
         Unifi
-        
     Fortinet:
         Old
         New (CAPWAP)
-        
     Cambium:
         cnMaestro
-    
     Aruba
 
 The currently supported DHCP servers are:
