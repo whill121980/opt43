@@ -105,7 +105,7 @@
 		var ipQuantity = ipValue.split(",").length;
 		var ipQuanValue = (decimalToHex((ipQuantity * 4),2));
 	
-	<!-- Determine vendor ID of WLC -->
+// Determine vendor ID of WLC
 		switch (wlcValue) {
 			case "zd":
 				var vendorId = "03";
@@ -123,7 +123,7 @@
 				var vendorId = "No data found";
 		}
 		
-	<!-- Convert IP from ASCII to hex (not for Cisco WLCs) -->
+// Convert IP from ASCII to hex (not for Cisco WLCs)
 		const convertToHex = (ip = '') => {
 			const res = [];
 			const { length: len } = ip; 
@@ -134,7 +134,7 @@
 				return res.join('');
 		}
 	
-	<!-- IP Validation functions -->
+// IP Validation functions
 		function ipValidation(ip) {
 				const validateIp = /^(([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])$/gi;
 				return validateIp.test(ip);
@@ -161,7 +161,7 @@
 				return returnValidIp.join(', ');
 		}
 	
-	<!-- Convert decimal to hex, pad each byte to 2 characters -->
+// Convert decimal to hex, pad each byte to 2 characters
 		function decimalToHex(d, padding) {
 			var hex = Number(d).toString(16);
 			padding = typeof (padding) === "undefined" || padding === null ? padding = 2 : padding;
@@ -171,8 +171,8 @@
 			return hex;
 		}
 		
-	<!-- Cisco devices expect the IP's decimal value converted to hex -->
-	<!-- This function will individually convert each IP entered, and then combine the results into a single string --> 
+// Cisco devices expect the IP's decimal value converted to hex 
+// This function will individually convert each IP entered, and then combine the results into a single string 
 		function ciscoIpArray(ipElem) {
 			ipArray = ipElem.split(',');
 			const ciscoIpRes = [];
@@ -184,13 +184,13 @@
 			
 		}
 	
-	<!-- Calculate hex value of the IP address for Cisco WLCs -->
+// Calculate hex value of the IP address for Cisco WLCs
 		function ciscoIpASA(ciscoIp) {
 			var [ciscoOctet1,ciscoOctet2,ciscoOctet3,ciscoOctet4] = ciscoIp.split('.');
 			return decimalToHex(ciscoOctet1,2) + decimalToHex(ciscoOctet2,2) + decimalToHex(ciscoOctet3,2) + decimalToHex(ciscoOctet4,2);
 		}
 	
-	<!-- Take the string and parse it to a Sonicwall-usable format (i.e. 0x<hex> and separated by semicolon) -->
+// Take the string and parse it to a Sonicwall-usable format (i.e. 0x<hex> and separated by semicolon) 
 		function parseForSonicwall(string) {
 			var parseString = string.split(/(..)/g).filter(s => s);
 			const sonicwallHex = [];
@@ -201,7 +201,7 @@
 			return sonicwallHex.join(';');
 		}
 		
-		<!-- Take the string and parse it to a Windows-usable format (space-separated) -->
+// Take the string and parse it to a Windows-usable format (space-separated) 
 		function parseForWindows(string) {
 			var parseString = string.split(/(..)/g).filter(s => s);
 			const windowsHex = [];
@@ -212,7 +212,7 @@
 			return windowsHex.join(' ');
 		}
 
-	<!-- Take the string and parse it to a pfSense/opnSense-usable format (colon-separated) -->
+// Take the string and parse it to a pfSense/opnSense-usable format (colon-separated) 
 			function parseForpfSense(string) {
 			var parseString = string.split(/(..)/g).filter(s => s);
 			const pfsenseHex = [];
@@ -230,7 +230,7 @@
 				return value;
 			}
 	
-	<!-- Generate the complete option 43 hex string based on the WLC type -->
+// Generate the complete option 43 hex string based on the WLC type
 		if (allIpsValid(ipValue)) {
 			switch (wlcValue) {
 				case "cisco":
@@ -244,7 +244,7 @@
 				default:
 					var opt43Result = "No data found.";
 			}
-		<!-- Determine the firewall type to know if the hex values need the escape characters for each byte (i.e. Sonicwall) -->
+// Determine the firewall type to know if the hex values need the escape characters for each byte (i.e. Sonicwall)
 			switch (fwValue) {
 				case "sonicwall":
 					document.getElementById('Opt43String').innerHTML = parseForSonicwall(opt43Result);
