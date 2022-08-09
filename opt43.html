@@ -156,6 +156,7 @@
 		var fwValue = fwSelect.value;
 		var fwType = fwSelect.options[fwSelect.selectedIndex].text;
 		var ipValue = document.getElementById('ipAddr').value;
+		ipValue = ipValue.replace(/\s+/g, '');
 		var ipTruncValue = removeTrailingComma(ipValue);
 		var newIp;
 		var ipLen = ipTruncValue.length;
