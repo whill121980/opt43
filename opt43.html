@@ -42,6 +42,7 @@
 							<option value="sonicwall">SonicWall</option>
 							<option value="asa">Cisco ASA</option>
 							<option value="ndx">Nomadix</option>
+							<option value="win">Windows</option>
 							<option value="pfsense">pfSense/opnSense (enter as "String")</option>
 						</select>
 					</div>
@@ -194,6 +195,17 @@
 			return sonicwallHex.join(';');
 		}
 		
+		<!-- Take the string and parse it to a Windows-usable format (space-separated) -->
+		function parseForWindows(string) {
+			var parseString = string.split(/(..)/g).filter(s => s);
+			const windowsHex = [];
+			for (let i = 0; i < parseString.length; i++) {
+				const windowsRes = parseString[i];
+				windowsHex.push(windowsRes);
+			}
+			return windowsHex.join(' ');
+		}
+
 	<!-- Take the string and parse it to a pfSense/opnSense-usable format (colon-separated) -->
 			function parseForpfSense(string) {
 			var parseString = string.split(/(..)/g).filter(s => s);
@@ -239,6 +251,9 @@
 					break;
 				case "pfsense":
 					document.getElementById('Opt43String').innerHTML = parseForpfSense(opt43Result);
+					break;
+				case "windows":
+					document.getElementById('Opt43String').innerHTML = parseForWindows(opt43Result);
 					break;
 				default:
 					document.getElementById('Opt43String').innerHTML = "No data found.";
