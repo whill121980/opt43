@@ -71,6 +71,7 @@
 			Option 43: 
 			<b id='Opt43String'></b>
 		</div>
+		<div class="row" id="cliString"></div>
 	</div>
 	<hr>
 	<div class="container">
@@ -244,7 +245,8 @@
 					document.getElementById('Opt43String').innerHTML = parseForSonicwall(opt43Result);
 					break; 
 				case "asa":
-					document.getElementById('Opt43String').innerHTML = opt43Result + '\n' + 'CLI Command: option 43 hex ' + opt43Result;
+					document.getElementById('Opt43String').innerHTML = opt43Result;
+					document.getElementById('cliString').innerHTML = 'CLI Command: <b>option 43 hex ' + opt43Result + '</b>'; 
 					break;
 				case "ndx":
 					document.getElementById('Opt43String').innerHTML = "0x" + opt43Result;
