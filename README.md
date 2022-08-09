@@ -7,10 +7,19 @@ The currently supported WLAN controllers are:
         ZoneDirector
 
     Cisco:
-        Various WLAN controllers
+        Aironet
         
     Ubiquity:
-        Unifi Controller/Cloud Key(/others?)
+        Unifi
+        
+    Fortinet:
+        Old
+        New (CAPWAP)
+        
+    Cambium:
+        cnMaestro
+    
+    Aruba
 
 The currently supported DHCP servers are:
 
@@ -19,6 +28,7 @@ The currently supported DHCP servers are:
     Cisco ASA
     Nomadix Hospitality Gateways
     pfSense/opnSense
+    Juniper SRX
 
 To use, you simply browse to the page, select the WLAN controller and DHCP server from the dropdowns and enter the list of IP address(es) of your WLAN controller node(s) and the option 43 string wil automatically generate. If you have more than 1 WLAN controller node that you want to include, simply add each IP address separated by a comma (,)
 
