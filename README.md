@@ -10,6 +10,7 @@ The currently supported WLAN controllers are:
         Unifi Controller/Cloud Key(/others?)
 
 The currently supported DHCP servers are:
+    Windows Server
     Sonicwall firewalls
     Cisco ASA
     Nomadix Hospitality Gateways
