@@ -244,7 +244,7 @@
 					document.getElementById('Opt43String').innerHTML = parseForSonicwall(opt43Result);
 					break; 
 				case "asa":
-					document.getElementById('Opt43String').innerHTML = opt43Result;
+					document.getElementById('Opt43String').innerHTML = opt43Result + '\n' + 'CLI Command: option 43 hex ' + opt43Result;
 					break;
 				case "ndx":
 					document.getElementById('Opt43String').innerHTML = "0x" + opt43Result;
