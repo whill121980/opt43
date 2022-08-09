@@ -19,6 +19,8 @@ To use, you simply browse to the page, select the WLAN controller and DHCP serve
 
 If you would like to test this web app before (or instead of) downloading it, you can see it in action at https://www.theuninformed.net/opt43.html
 
+If you are interested in contributing to this project, please reach out to whill@mu-world.net.
+
 Shield: [![CC BY-NC-SA 4.0][cc-by-nc-sa-shield]][cc-by-nc-sa]
 
 This work is licensed under a
