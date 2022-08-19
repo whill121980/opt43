@@ -5,7 +5,6 @@ var fwSelect = document.getElementById("fwList");
 var fwValue = fwSelect.value;
 var ipValue = document.getElementById('ipAddr').value;
 ipValue = ipValue.replace(/\s+/g, '');
-var ipTruncValue = removeTrailingComma(ipValue);
 var ipLen = ipTruncValue.length;
 var ipQuantity = ipValue.split(",").length;
 var ipQuanValue = (decimalToHex((ipQuantity * 4),2));
@@ -136,7 +135,10 @@ function updateForm() {
             return value;
         }
 
+        var ipTruncValue = removeTrailingComma(ipValue);
+
 // Generate the complete option 43 hex string based on the WLC type
+
     if (allIpsValid(ipValue)) {
         switch (wlcValue) {
             case "cisco":
