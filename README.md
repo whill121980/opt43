@@ -27,7 +27,7 @@ The currently supported DHCP servers are:
 
 To use, you simply browse to the page, select the WLAN controller and DHCP server from the dropdowns and enter the list of IP address(es) of your WLAN controller node(s) and the option 43 string wil automatically generate. If you have more than 1 WLAN controller node that you want to include, simply add each IP address separated by a comma (,)
 
-If you would like to test this web app before (or instead of) downloading it, you can see it in action at https://www.theuninformed.net/opt43.html
+If you would like to test this web app before (or instead of) downloading it, you can see it in action at https://opt43.theuninformed.net
 
 If you are interested in contributing to this project, please reach out to whill@mu-world.net.
 
