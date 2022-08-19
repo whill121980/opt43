@@ -179,6 +179,7 @@ function updateForm() {
         }
     } else {
         document.getElementById('Opt43String').innerHTML = "You entered an invalid IP address. Please check your entries and submit again."
+        document.getElementById('cliString').innerHTML = '';
     }
     document.getElementById('ipAddressString').innerHTML = ipValidList(ipValue);
 }
