@@ -154,7 +154,6 @@ function updateForm() {
         switch (fwValue) {
             case "sonicwall":
                 document.getElementById('Opt43String').innerHTML = parseForSonicwall(opt43Result);
-                document.getElementById('cliString').remove();
                 break; 
             case "asa":
                 document.getElementById('Opt43String').innerHTML = opt43Result;
@@ -162,20 +161,15 @@ function updateForm() {
                 break;
             case "ndx":
                 document.getElementById('Opt43String').innerHTML = "0x" + opt43Result;
-                document.getElementById('cliString').remove();
                 break;
             case "pfsense":
                 document.getElementById('Opt43String').innerHTML = parseForpfSense(opt43Result);
-                document.getElementById('cliString').remove();
                 break;
             case "win":
                 document.getElementById('Opt43String').innerHTML = parseForWindows(opt43Result);
-                document.getElementById('cliString').remove();
                 break;
             default:
                 document.getElementById('Opt43String').innerHTML = "No data found.";
-                document.getElementById('cliString').remove();
-                break;
         }
     } else {
         document.getElementById('Opt43String').innerHTML = "You entered an invalid IP address. Please check your entries and submit again."
