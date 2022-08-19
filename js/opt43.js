@@ -1,18 +1,16 @@
-function updateForm() {
-    var wlcSelect = document.getElementById("wlcList");
-    var wlcValue = wlcSelect.value;
-    var wlcType = wlcSelect.options[wlcSelect.selectedIndex].text;
-    var fwSelect = document.getElementById("fwList");
-    var fwValue = fwSelect.value;
-    var fwType = fwSelect.options[fwSelect.selectedIndex].text;
-    var ipValue = document.getElementById('ipAddr').value;
-    ipValue = ipValue.replace(/\s+/g, '');
-    var ipTruncValue = removeTrailingComma(ipValue);
-    var newIp;
-    var ipLen = ipTruncValue.length;
-    var ipQuantity = ipValue.split(",").length;
-    var ipQuanValue = (decimalToHex((ipQuantity * 4),2));
+// Declaring variables for WLC, DHCP server, and IP addresses
+var wlcSelect = document.getElementById("wlcList");
+var wlcValue = wlcSelect.value;
+var fwSelect = document.getElementById("fwList");
+var fwValue = fwSelect.value;
+let ipValue = document.getElementById('ipAddr').value;
+ipValue = ipValue.replace(/\s+/g, '');
+var ipTruncValue = removeTrailingComma(ipValue);
+var ipLen = ipTruncValue.length;
+var ipQuantity = ipValue.split(",").length;
+var ipQuanValue = (decimalToHex((ipQuantity * 4),2));
 
+function updateForm() {
 // Determine vendor ID of WLC
     switch (wlcValue) {
         case "zd":
