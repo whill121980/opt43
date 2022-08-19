@@ -175,6 +175,7 @@ function updateForm() {
             default:
                 document.getElementById('Opt43String').innerHTML = "No data found.";
                 document.getElementById('cliString').remove();
+                break;
         }
     } else {
         document.getElementById('Opt43String').innerHTML = "You entered an invalid IP address. Please check your entries and submit again."
