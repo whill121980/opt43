@@ -154,6 +154,7 @@ function updateForm() {
         switch (fwValue) {
             case "sonicwall":
                 document.getElementById('Opt43String').innerHTML = parseForSonicwall(opt43Result);
+                document.getElementById('cliString').innerHTML = '';
                 break; 
             case "asa":
                 document.getElementById('Opt43String').innerHTML = opt43Result;
