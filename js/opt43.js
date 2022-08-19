@@ -1,13 +1,8 @@
-// Declaring variables for WLC, DHCP server, and IP addresses
+// Declaring variables for WLC and DHCP server
 var wlcSelect = document.getElementById("wlcList");
 var wlcValue = wlcSelect.value;
 var fwSelect = document.getElementById("fwList");
 var fwValue = fwSelect.value;
-var ipValue = document.getElementById('ipAddr').value;
-ipValue = ipValue.replace(/\s+/g, '');
-var ipLen = ipTruncValue.length;
-var ipQuantity = ipValue.split(",").length;
-var ipQuanValue = (decimalToHex((ipQuantity * 4),2));
 
 function updateForm() {
 // Determine vendor ID of WLC
@@ -135,8 +130,14 @@ function updateForm() {
             return value;
         }
 
-        var ipTruncValue = removeTrailingComma(ipValue);
-
+// set IP address variables here 
+    var ipTruncValue = removeTrailingComma(ipValue);
+    var ipValue = document.getElementById('ipAddr').value;
+    ipValue = ipValue.replace(/\s+/g, '');
+    var ipLen = ipTruncValue.length;
+    var ipQuantity = ipValue.split(",").length;
+    var ipQuanValue = (decimalToHex((ipQuantity * 4),2));
+    
 // Generate the complete option 43 hex string based on the WLC type
 
     if (allIpsValid(ipValue)) {
