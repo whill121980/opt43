@@ -5,7 +5,7 @@ function updateForm() {
     var fwSelect = document.getElementById("fwList");
     var fwValue = fwSelect.value;
     let ipValue = document.getElementById('ipAddr').value;
-    ipValue = ipValue.replace(/\s+/g, '');
+    ipValue = ipValue ? ipValue.replace(/\s+/g, '') : '10.0.0.1,10.0.0.2';
     var ipTruncValue = removeTrailingComma(ipValue);
     var ipLen = ipTruncValue.length;
     var ipQuantity = ipValue.split(",").length;
