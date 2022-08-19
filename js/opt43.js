@@ -1,10 +1,16 @@
-// Declaring variables for WLC and DHCP server
-var wlcSelect = document.getElementById("wlcList");
-var wlcValue = wlcSelect.value;
-var fwSelect = document.getElementById("fwList");
-var fwValue = fwSelect.value;
-
 function updateForm() {
+// declare variables for WLC type, DHCP server, and IP addresses
+    var wlcSelect = document.getElementById("wlcList");
+    var wlcValue = wlcSelect.value;
+    var fwSelect = document.getElementById("fwList");
+    var fwValue = fwSelect.value;
+    let ipValue = document.getElementById('ipAddr').value;
+    ipValue = ipValue.replace(/\s+/g, '');
+    var ipTruncValue = removeTrailingComma(ipValue);
+    var ipLen = ipTruncValue.length;
+    var ipQuantity = ipValue.split(",").length;
+    var ipQuanValue = (decimalToHex((ipQuantity * 4),2));
+
 // Determine vendor ID of WLC
     switch (wlcValue) {
         case "zd":
@@ -130,16 +136,7 @@ function updateForm() {
             return value;
         }
 
-// set IP address variables here 
-    var ipTruncValue = removeTrailingComma(ipValue);
-    var ipValue = document.getElementById('ipAddr').value;
-    ipValue = ipValue.replace(/\s+/g, '');
-    var ipLen = ipTruncValue.length;
-    var ipQuantity = ipValue.split(",").length;
-    var ipQuanValue = (decimalToHex((ipQuantity * 4),2));
-    
 // Generate the complete option 43 hex string based on the WLC type
-
     if (allIpsValid(ipValue)) {
         switch (wlcValue) {
             case "cisco":
